@@ -1,0 +1,30 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Infra folder specific
+infra/.env
+infra/postgres-init/.env
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Node modules (if any)
+node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+*.class
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
