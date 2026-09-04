@@ -12,12 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Aggregate root for a single match. Deliberately does NOT hold full Player
- * or Team objects — this service only stores playerId/teamId references.
- * Player details live in the Player Service; keeping the boundary strict is
- * what makes this a real microservice instead of a distributed monolith.
- */
 @Entity
 @Table(name = "matches")
 @Getter

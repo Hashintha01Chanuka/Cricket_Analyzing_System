@@ -14,4 +14,16 @@ public interface BallRepository extends JpaRepository<Ball, UUID> {
            "ORDER BY b.overNumber ASC, b.ballNumber ASC")
     List<Ball> findByMatchAndInningsOrdered(@Param("matchId") UUID matchId,
                                              @Param("innings") int innings);
+
+    @Query("SELECT b FROM Ball b WHERE b.match.id = :matchId AND b.inningsNumber = :innings " +
+            "AND b.batsmanId = :batsmanId ORDER BY b.overNumber ASC, b.ballNumber ASC")
+    List<Ball> findByMatchAndInningsAndBatsmanOrdered(@Param("matchId") UUID matchId,
+                                                      @Param("innings") int innings,
+                                                      @Param("batsmanId") UUID batsmanId);
+
+    @Query("SELECT b FROM Ball b WHERE b.match.id = :matchId AND b.inningsNumber = :innings " +
+            "AND b.bowlerId = :bowlerId ORDER BY b.overNumber ASC, b.ballNumber ASC")
+    List<Ball> findByMatchAndInningsAndBowlerOrdered(@Param("matchId") UUID matchId,
+                                                     @Param("innings") int innings,
+                                                     @Param("bowlerId") UUID bowlerId);
 }

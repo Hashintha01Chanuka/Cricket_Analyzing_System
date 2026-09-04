@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class MatchController {
 
     private final MatchService matchService;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<MatchResponse> createMatch(@Valid @RequestBody MatchRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(matchService.createMatch(request));
@@ -36,13 +38,16 @@ public class MatchController {
         return matchService.listMatches();
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'SCORER')")
     @PostMapping("/{matchId}/balls")
-    public ResponseEntity<MatchResponse> addBall(@PathVariable UUID matchId,@Valid @RequestBody BallRequest request){
+    public ResponseEntity<MatchResponse> addBall(@PathVariable UUID matchId,
+                                                 @Valid @RequestBody BallRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(matchService.addBall(matchId, request));
     }
 
     @GetMapping("/{matchId}/run-rate")
-    public RunRateResponse currentRunRate(@PathVariable UUID matchId, @RequestParam(defaultValue = "1") int innings,
+    public RunRateResponse currentRunRate(@PathVariable UUID matchId,
+                                          @RequestParam(defaultValue = "1") int innings,
                                           @RequestParam(defaultValue = "6") int overs) {
         return matchService.currentRunRate(matchId, innings, overs);
     }

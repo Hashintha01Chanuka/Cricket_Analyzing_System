@@ -10,11 +10,6 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-/**
- * A single delivery. bowlerId / batsmanId are references into the Player
- * Service, not embedded entities — this keeps the two services independently
- * deployable and independently owned.
- */
 @Entity
 @Table(name = "balls")
 @Getter
