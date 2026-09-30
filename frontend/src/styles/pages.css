@@ -1,0 +1,184 @@
+/* ===== Auth pages ===== */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-8);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card h1 {
+  font-size: 24px;
+  color: var(--color-pitch-dark);
+  margin-bottom: var(--space-1);
+}
+
+.auth-card .subtitle {
+  margin-bottom: var(--space-5);
+}
+
+.auth-card .btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+.auth-switch {
+  margin-top: var(--space-5);
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-ink-dim);
+}
+
+.auth-switch a {
+  color: var(--color-turf);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== Match cards (list page) ===== */
+.match-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.match-card-teams {
+  font-size: 18px;
+  color: var(--color-pitch-dark);
+  margin-bottom: var(--space-1);
+}
+
+.match-card-vs {
+  color: var(--color-gold);
+  font-size: 14px;
+  margin: 0 var(--space-1);
+}
+
+/* ===== Match detail layout ===== */
+.match-detail-grid {
+  margin-top: var(--space-5);
+  align-items: start;
+}
+
+.match-detail-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.ball-checkboxes {
+  display: flex;
+  gap: var(--space-5);
+  margin-bottom: var(--space-4);
+  font-size: 14px;
+}
+
+.ball-checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+/* ===== Win probability ===== */
+.win-prob-result {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.win-prob-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--color-border);
+  overflow: hidden;
+  margin-bottom: var(--space-2);
+}
+
+.win-prob-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-turf), var(--color-gold));
+  transition: width 0.3s ease;
+}
+
+.win-prob-numbers {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-pitch-dark);
+}
+
+/* ===== Notifications ===== */
+.notification-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  background: var(--color-surface-alt);
+}
+
+.notification-type {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(200, 155, 60, 0.15);
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+.notification-hat_trick .notification-type {
+  background: rgba(139, 58, 58, 0.15);
+  color: var(--color-ball-red);
+}
+
+/* ===== Player stat cards ===== */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.stat-card-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-dim);
+}
+
+.stat-card-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-pitch-dark);
+}
+
+/* ===== Leaderboard ===== */
+.leaderboard-rank {
+  color: var(--color-ink-dim);
+  width: 24px;
+}
+
+.leaderboard-value {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-turf);
+}

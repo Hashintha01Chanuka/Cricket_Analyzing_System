@@ -1,0 +1,80 @@
+.navbar {
+  background: var(--color-pitch-dark);
+  color: var(--color-chalk);
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-chalk);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.navbar-brand-mark {
+  background: var(--color-gold);
+  color: var(--color-pitch-dark);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 3px 7px;
+  border-radius: var(--radius-sm);
+}
+
+.navbar-links {
+  display: flex;
+  gap: var(--space-5);
+  flex: 1;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--color-chalk-dim);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.12s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--color-gold);
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar-username {
+  font-size: 13px;
+  color: var(--color-chalk-dim);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+@media (max-width: 720px) {
+  .navbar-inner {
+    flex-wrap: wrap;
+  }
+  .navbar-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+}

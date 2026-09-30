@@ -1,0 +1,128 @@
+.scoreboard {
+  background: var(--color-pitch-dark);
+  color: var(--color-chalk);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  box-shadow: var(--shadow-panel);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle scanline texture to reinforce the "screen" feel without being gimmicky */
+.scoreboard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(244, 241, 232, 0.02) 0px,
+    rgba(244, 241, 232, 0.02) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
+
+.scoreboard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.scoreboard-format {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-chalk-dim);
+  letter-spacing: 0.08em;
+}
+
+.scoreboard-teams {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: var(--space-5);
+}
+
+.scoreboard-vs {
+  color: var(--color-gold);
+  font-size: 15px;
+  margin: 0 var(--space-2);
+}
+
+.scoreboard-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+
+.scoreboard-score {
+  font-size: 56px;
+  font-weight: 600;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.scoreboard-wickets {
+  font-size: 32px;
+  color: var(--color-chalk-dim);
+}
+
+.scoreboard-overs {
+  text-align: right;
+}
+
+.scoreboard-overs-value {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.scoreboard-overs-label {
+  display: block;
+  font-size: 11px;
+  color: var(--color-chalk-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.scoreboard-footer {
+  display: flex;
+  gap: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(244, 241, 232, 0.12);
+}
+
+.scoreboard-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scoreboard-stat-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--color-chalk-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.scoreboard-stat-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.scoreboard-venue {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.scoreboard-waiting {
+  margin-top: var(--space-4);
+  font-size: 13px;
+  color: var(--color-chalk-dim);
+  font-style: italic;
+}
